@@ -48,7 +48,7 @@ typedef struct
 #define SEEDSTUDIO_MISO    4
 #define SEEDSTUDIO_MOSI    3
 #define SEEDSTUDIO_SCK     5
-#define SEEDSTUDIO_SS      4
+#define SEEDSTUDIO_SS      2	
 
 
 #define SPI_PORT    PORTB
