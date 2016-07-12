@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 // can2usb Arduino/Genuino UNO R3 firmware
-// version 1.0
+// version 1.1
+// 1.1 - moved CAN GIE to happen after mcp_init() to avoid lockups with seedstudio shield
 //
 // (c) Georg Swoboda <cn@warp.at>, Robert Blaizer - All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////
@@ -191,9 +192,6 @@ void hardware_init(void)
  	PORTD |= _BV(PORTD2); 	// turn On the Pull-up	
 	uart_init();
 	wdt_enable(WDTO_500MS);	
-	// enable INT0 (CANINT)
-	EICRA |= _BV(ISC11);    // set INT0 
-    EIMSK |= _BV(INT0);     // Turn on INT0
 	sei();					//Enable Global Interrupt	
 }
 
@@ -449,6 +447,9 @@ void parse_init(void)
     {
     	spi_init(shield);
     	mcp2515_init(speed);   
+      // enable INT0 (CANINT)
+      EICRA |= _BV(ISC11);    // set INT0 
+      EIMSK |= _BV(INT0);     // Turn on INT0
    	}
    	return;
 }
@@ -476,8 +477,8 @@ int main (void)
 		r_msg[i].used=0;
 	cmsg.used=0;
 	tx_msg.used=0;	
-  	hardware_init();
-  	while(1) 
+  hardware_init();
+  while(1) 
 	{					
 		wdt_reset();		
 		if (uart_str_complete && cmsg.used==0)
