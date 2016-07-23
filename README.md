@@ -7,7 +7,7 @@ Hex file
 
 https://github.com/t4eeditor/can2usbAVR/tree/master/hex
 
-Flashing firmware (avrdude):
+Flashing firmware (on Mac/Linux via avrdude):
 ============================
 
 edit the Makefile - setup the correct serial port: 
@@ -19,7 +19,7 @@ run "make flash"
 alternatively run "make" and upload the .hex file with another tool.
 
 
-Flashing firmware (on Windows):
+Flashing firmware (on Windows via Xloader):
 ===============================
 
 see http://www.hobbytronics.co.uk/arduino-xloader
