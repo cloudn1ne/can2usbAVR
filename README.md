@@ -1,5 +1,7 @@
 # can2usbAVR
 
+can2usbAVR is the 'driver' that runs on the Arudino board that talks to the CAN Shields on one side, and the USB/Serial Port on the other side. All of our software requires can2usbAVR to be running on the Arduino.
+
 If you want to rebuild form source you need to have the arduino build tools installed. they come with the arduino gui download usually.
 If you only want to flash the .hex file to the Arduino avrdude (MacOs/Linux) or Xloader (Windows) will be sufficient.
 
