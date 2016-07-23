@@ -2,6 +2,11 @@
 
 Be sure to have the arduino build tools installed. they come with the arduino gui download usually.
 
+Hex file
+========
+
+https://github.com/t4eeditor/can2usbAVR/tree/master/hex
+
 Flashing firmware (avrdude):
 ============================
 
