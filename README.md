@@ -12,3 +12,10 @@ PROGRAMMER = -C avrdude.conf  -v -V -patmega328p -carduino -P/dev/cu.usbmodem1d1
 run "make flash"
 
 alternatively run "make" and upload the .hex file with another tool.
+
+
+Flashing firmware (on Windows):
+===============================
+
+see http://www.hobbytronics.co.uk/arduino-xloader
+
