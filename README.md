@@ -1,6 +1,7 @@
 # can2usbAVR
 
-Be sure to have the arduino build tools installed. they come with the arduino gui download usually.
+If you want to rebuild form source you need to have the arduino build tools installed. they come with the arduino gui download usually.
+If you only want to flash the .hex file to the Arduino avrdude (MacOs/Linux) or Xloader (Windows) will be sufficient.
 
 Hex file
 ========
